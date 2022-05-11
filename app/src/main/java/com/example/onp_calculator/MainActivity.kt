@@ -143,6 +143,11 @@ class MainActivity : AppCompatActivity() {
             else if (limitToFour == true && stack.size >= 4){
                 Toast.makeText(this, "Stack limited to 4 values", Toast.LENGTH_SHORT).show()
             }
+            else if (currentVal.isEmpty() && stack.isNotEmpty()){
+                val v = stack.pop()
+                stack.push(v)
+                stack.push(v)
+            }
             updateDisplayValues()
         }
     }
