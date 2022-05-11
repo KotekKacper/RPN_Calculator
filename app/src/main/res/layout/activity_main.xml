@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:autoSizeTextType="uniform"
+            android:background="@color/white"
+            android:text="4:\n3:\n2:\n1:" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:id="@+id/options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/settings"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/options_height"
+                    android:theme="@style/Theme.settings"
+                    android:layout_weight="0.5"
+                    android:text="⚙"
+                    />
+
+                <Button
+                    android:id="@+id/drop"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/options_height"
+                    android:layout_weight="1"
+                    android:text="DROP"
+                    android:theme="@style/Theme.options" />
+
+                <Button
+                    android:id="@+id/swap"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/options_height"
+                    android:layout_weight="1"
+                    android:text="SWAP"
+                    android:theme="@style/Theme.options" />
+
+                <Button
+                    android:id="@+id/ac"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/options_height"
+                    android:layout_weight="1"
+                    android:text="AC"
+                    android:theme="@style/Theme.options" />
+
+                <Button
+                    android:id="@+id/undo"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/options_height"
+                    android:layout_weight="1"
+                    android:text="←"
+                    android:theme="@style/Theme.options" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/numbers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/options">
+
+                <Button
+                    android:id="@+id/seven"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/eight"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_toRightOf="@id/seven"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/nine"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_toRightOf="@id/eight"
+                    android:text="9" />
+
+                <Button
+                    android:id="@+id/four"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/seven"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/five"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/seven"
+                    android:layout_toRightOf="@id/four"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/six"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/seven"
+                    android:layout_toRightOf="@id/five"
+                    android:text="6" />
+
+                <Button
+                    android:id="@+id/one"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/four"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/two"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/four"
+                    android:layout_toRightOf="@id/one"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/three"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/four"
+                    android:layout_toRightOf="@id/two"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/zero"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/one"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/pm"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/one"
+                    android:layout_toRightOf="@id/zero"
+                    android:text="+/-"
+                    android:theme="@style/Theme.pmdot" />
+
+                <Button
+                    android:id="@+id/dot"
+                    android:layout_width="@dimen/nr_width"
+                    android:layout_height="@dimen/nr_height"
+                    android:layout_below="@id/one"
+                    android:layout_toRightOf="@id/pm"
+                    android:text="."
+                    android:theme="@style/Theme.pmdot" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/calculations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/options"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@+id/numbers">
+
+                <LinearLayout
+                    android:id="@+id/op1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/pow"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/nr_height"
+                        android:layout_weight="1"
+                        android:text="^"
+                        android:theme="@style/Theme.calculations" />
+
+                    <Button
+                        android:id="@+id/root"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/nr_height"
+                        android:layout_weight="1"
+                        android:text="√"
+                        android:theme="@style/Theme.calculations" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/op2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/op1">
+
+                    <Button
+                        android:id="@+id/multi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/nr_height"
+                        android:layout_weight="1"
+                        android:text="x"
+                        android:theme="@style/Theme.calculations" />
+
+                    <Button
+                        android:id="@+id/div"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/nr_height"
+                        android:layout_weight="1"
+                        android:text="÷"
+                        android:theme="@style/Theme.calculations" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/op3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/op2">
+
+                    <Button
+                        android:id="@+id/plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/nr_height"
+                        android:layout_weight="1"
+                        android:text="+"
+                        android:theme="@style/Theme.calculations" />
+
+                    <Button
+                        android:id="@+id/minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/nr_height"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:theme="@style/Theme.calculations" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/op4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/op3">
+
+                    <Button
+                        android:id="@+id/enter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/nr_height"
+                        android:layout_weight="1"
+                        android:text="ENTER"
+                        android:theme="@style/Theme.calculations" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

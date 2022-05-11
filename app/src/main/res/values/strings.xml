@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RPN Calculator</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Settings Titles -->
+    <string name="settings">Settings</string>
+    <string name="decimal_title">Decimal precision</string>
+    <string name="limit_title">Limit the stack to 4 values</string>
+    <string name="color_title">Display\'s background color</string>
+
+</resources>
