@@ -196,7 +196,7 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/nr_height"
                         android:layout_weight="1"
-                        android:text="^"
+                        android:text="@string/power"
                         android:theme="@style/Theme.calculations" />
 
                     <Button
@@ -204,7 +204,7 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/nr_height"
                         android:layout_weight="1"
-                        android:text="√"
+                        android:text="@string/root"
                         android:theme="@style/Theme.calculations" />
                 </LinearLayout>
 
@@ -219,7 +219,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/nr_height"
                         android:layout_weight="1"
-                        android:text="x"
+                        android:text="@string/multiply"
                         android:theme="@style/Theme.calculations" />
 
                     <Button
@@ -227,7 +227,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/nr_height"
                         android:layout_weight="1"
-                        android:text="÷"
+                        android:text="@string/divide"
                         android:theme="@style/Theme.calculations" />
                 </LinearLayout>
 
@@ -242,7 +242,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/nr_height"
                         android:layout_weight="1"
-                        android:text="+"
+                        android:text="@string/add"
                         android:theme="@style/Theme.calculations" />
 
                     <Button
@@ -250,7 +250,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/nr_height"
                         android:layout_weight="1"
-                        android:text="-"
+                        android:text="@string/subtract"
                         android:theme="@style/Theme.calculations" />
                 </LinearLayout>
 

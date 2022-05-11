@@ -8,4 +8,12 @@
     <string name="limit_title">Limit the stack to 4 values</string>
     <string name="color_title">Display\'s background color</string>
 
+    <!-- Calculations text   -->
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="multiply">×</string>
+    <string name="divide">÷</string>
+    <string name="power">y<sup><small>x</small></sup></string>
+    <string name="root"><sup><small>x</small></sup>√y</string>
+
 </resources>

@@ -203,6 +203,12 @@ class MainActivity : AppCompatActivity() {
                 stack.push(a.toString())
                 return@setOnClickListener
             }
+            if (b < 0 && calcType == 'r'){
+                Toast.makeText(this, "Forbidden operation", Toast.LENGTH_SHORT).show()
+                stack.push(b.toString())
+                stack.push(a.toString())
+                return@setOnClickListener
+            }
             when (calcType){
                 'a'     -> stack.push((b+a).toString())
                 'm'     -> stack.push((b-a).toString())
