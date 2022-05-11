@@ -93,17 +93,22 @@ open class ButtonHandling : AppCompatActivity() {
         return round(this * multiplier) / multiplier
     }
     private fun decimalControl(str: String): String {
+        Log.i("Nr", str)
         if (str.contains('.')) {
             if (str.indexOf('.') == str.length - 1)
                 return str.substring(0, str.length - min(str.length - 1, 1))
             else {
-                if (str.toDouble().roundDecimal(decPrec).toString().endsWith(".0"))
-                    return str.toDouble().roundDecimal(decPrec).toInt().toString()
+                if (str.toDouble().roundDecimal(decPrec).toString().endsWith(".0")
+                    && str.length <= 15 && !str.contains('E') && !str.contains("Inf"))
+                    return str.toDouble().roundDecimal(decPrec).toLong().toString()
                 else
                     return str.toDouble().roundDecimal(decPrec).toString()
             }
         } else {
-            return str.toInt().toString()
+            if (str.length <= 15 && !str.contains('E') && !str.contains("Inf"))
+                return str.toLong().toString()
+            else
+                return str.toDouble().toString()
         }
     }
     private fun getFromStack(index: Int): String {
@@ -125,7 +130,8 @@ open class ButtonHandling : AppCompatActivity() {
     }
     private fun numberButtonHandler(buttonHandle: Button, num: Int) {
         buttonHandle.setOnClickListener {
-            currentVal += num.toString()
+            if (currentVal.length < 15)
+                currentVal += num.toString()
             updateDisplayValues()
         }
     }
