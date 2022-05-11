@@ -29,23 +29,12 @@ class MainActivity : AppCompatActivity() {
         repeat(decimals) { multiplier *= 10 }
         return round(this * multiplier) / multiplier
     }
-    private fun decimalControl(s: String): String{
-        var str = ""
-        if (s.endsWith(".0")){
-            str = s.substring(0, s.length-2)
-        }
-        else if (s.endsWith(".")){
-            str = s.substring(0, s.length-1)
-        }
-        else{
-            str = s
-        }
-
+    private fun decimalControl(str: String): String{
         if (str.contains('.')){
             if (str.indexOf('.') == str.length-1)
                 return str.substring(0, str.length-min(str.length-1,1))
             else {
-                if (decPrec == 0 || str.endsWith(".0"))
+                if (str.toDouble().roundDecimal(decPrec).toString().endsWith(".0"))
                     return str.toDouble().roundDecimal(decPrec).toInt().toString()
                 else
                     return str.toDouble().roundDecimal(decPrec).toString()
@@ -116,10 +105,20 @@ class MainActivity : AppCompatActivity() {
     }
     private fun pmButtonHandler(buttonHandle: Button){
         buttonHandle.setOnClickListener {
-            if (currentVal.startsWith("-"))
-                currentVal = currentVal.substring(1)
-            else
-                currentVal = "-$currentVal"
+            if (currentVal.isEmpty() && stack.isNotEmpty()){
+                var first = stack.pop()
+                if (first.startsWith("-"))
+                    first = first.substring(1)
+                else
+                    first = "-$first"
+                stack.push(first)
+            }
+            else{
+                if (currentVal.startsWith("-"))
+                    currentVal = currentVal.substring(1)
+                else
+                    currentVal = "-$currentVal"
+            }
             updateDisplayValues()
         }
     }
