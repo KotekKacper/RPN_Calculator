@@ -70,11 +70,11 @@ open class ButtonHandling : AppCompatActivity() {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
 
         // Changing decimal precision on the stack
-        val decimalPrec = sharedPreferences.getString("decimal_acc", "")
+        val decimalPrec = sharedPreferences.getString("decimal_acc", "2")
         decPrec = decimalPrec!!.toInt()
 
         // Changing background color on the stack
-        val backgroudColor = sharedPreferences.getString("display_back", "")
+        val backgroudColor = sharedPreferences.getString("display_back", "white")
         val display: TextView = findViewById(R.id.display)
         var colorId = getResources().getIdentifier(backgroudColor, "color", getPackageName())
         display.background = ColorDrawable(getResources().getColor(colorId))
